@@ -1,0 +1,36 @@
+<?php
+
+$_routes = [
+
+    '/' => ['handler' => ['MainController','index']],
+
+    '/section/([a-z]*)/([0-9]+)' => ['handler' => ['ForumController','showTopic']],
+    '/section/([a-z]*)' => ['handler' => ['ForumController','showSection']],
+ '/login' => ['handler' => ['AuthController','login']],
+'/registration' => ['handler' => ['AuthController','registration']],
+'/logout' => ['handler' => ['AuthController','logout']],
+'/search' => ['handler' => ['SearchController','searchText']],
+'/account' => ['handler' => ['AccountController','showAccount']],
+'/account/profil' => ['handler' => ['AccountController','showProfilAccount']],
+'/account/topic' => ['handler' => ['AccountController','showTopicAccount']],
+'/account/post' => ['handler' => ['AccountController','showPostAccount']],
+'/admin' => ['handler' => ['Admin\AdminController','showAdminmenu'],
+        'policy' => ['is_admin']],
+'/admin/user' => ['handler' => ['Admin\AdminUserController','showUsersAdmin'],        'policy' => ['is_admin']],
+'/admin/user/create' => ['handler' => ['Admin\AdminUserController','createUsersAdmin'],        'policy' => ['is_admin']],
+'/admin/user/edit/([0-9]+)' => ['handler' => ['Admin\AdminUserController','editUsersAdmin'],        'policy' => ['is_admin']],
+'/admin/user/delete/([0-9]+)' => ['handler' => ['Admin\AdminUserController','deleteUsersAdmin'],        'policy' => ['is_admin']],
+'/admin/section' => ['handler' => ['Admin\AdminSectionController','showSections'],        'policy' => ['is_admin']],
+'/admin/section/create' => ['handler' => ['Admin\AdminSectionController','createSections'],        'policy' => ['is_admin']],
+'/admin/section/edit/([0-9]+)' => ['handler' => ['Admin\AdminSectionController','editSections'],        'policy' => ['is_admin']],
+'/admin/section/delete/([0-9]+)' => ['handler' => ['Admin\AdminSectionController','deleteSection'],        'policy' => ['is_admin']],
+'/admin/topic' => ['handler' => ['Admin\AdminTopicController','showTopics'],        'policy' => ['is_admin']],
+'/admin/topic/create' => ['handler' => ['Admin\AdminTopicController','createTopics'],        'policy' => ['is_admin']],
+'/admin/topic/edit/([0-9]+)' => ['handler' => ['Admin\AdminTopicController','editTopics'],        'policy' => ['is_admin']],
+'/admin/topic/delete/([0-9]+)' => ['handler' => ['Admin\AdminTopicController','deleteTopic'],        'policy' => ['is_admin']],
+'/admin/post' => ['handler' => ['Admin\AdminPostController','showPosts'],        'policy' => ['is_admin']],
+'/admin/post/create' => ['handler' => ['Admin\AdminPostController','createPosts'],        'policy' => ['is_admin']],
+'/admin/post/edit/([0-9]+)' => ['handler' => ['Admin\AdminPostController','editPosts'],        'policy' => ['is_admin']],
+'/admin/post/delete/([0-9]+)' => ['handler' => ['Admin\AdminPostController','deletePost'],        'policy' => ['is_admin']],
+'/vk-callback' => ['handler' => ['VkController','vkCallback']],
+];
